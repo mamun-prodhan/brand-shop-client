@@ -1,29 +1,19 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
-const Register = () => {
-  const { createUser, updateUser } = useContext(AuthContext);
+const Login = () => {
+  const { signIn } = useContext(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
-    const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, photoURL, email, password);
-    createUser(email, password)
+    console.log(email, password);
+    signIn(email, password)
       .then((result) => {
         console.log(result.user);
-        updateUser(name, photoURL)
-          .then(() => {
-            console.log("Profile Updated");
-            form.reset();
-          })
-          .catch((error) => console.log(error));
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => console.log(error));
   };
   return (
     <div>
@@ -32,30 +22,6 @@ const Register = () => {
       </h2>
       <div className="md:w-1/2 mx-auto">
         <form onSubmit={handleRegister}>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Name</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Name"
-              name="name"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Photo URL</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Photo URL"
-              name="photoURL"
-              className="input input-bordered"
-              required
-            />
-          </div>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
@@ -81,7 +47,7 @@ const Register = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Register</button>
+            <button className="btn btn-primary">Login</button>
           </div>
         </form>
       </div>
@@ -89,4 +55,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
