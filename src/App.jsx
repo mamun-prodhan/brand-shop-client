@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <button className="btn btn-secondary">Secondary</button>
+      <h2>Home page test</h2>
     </>
   );
 }
