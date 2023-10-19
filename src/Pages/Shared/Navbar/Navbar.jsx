@@ -64,11 +64,16 @@ const Navbar = () => {
             {navlinks}
           </ul>
           {user && (
-            <div
-              onClick={handleSignOut}
-              className="text-lg font-semibold cursor-pointer"
-            >
-              Logout
+            <div className=" flex items-center gap-4">
+              <img
+                className="h-8 w-8 rounded-full border-2"
+                src={user.photoURL}
+                alt=""
+              />
+              <p>{user.displayName}</p>
+              <button onClick={handleSignOut} className="btn">
+                Logout
+              </button>
             </div>
           )}
         </div>
