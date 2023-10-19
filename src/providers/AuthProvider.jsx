@@ -32,13 +32,7 @@ const AuthProvider = ({ children }) => {
 
   const logOut = () => {
     setLoading(true);
-    signOut(auth)
-      .then(() => {
-        console.log("user signed out successfully");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    return signOut(auth);
   };
 
   const authInfo = {
