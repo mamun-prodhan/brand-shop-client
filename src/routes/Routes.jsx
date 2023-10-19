@@ -4,6 +4,7 @@ import Contact from "../Pages/Contact/Contact";
 import Home from "../Pages/Home/Home";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
+import BrandItems from "../Pages/BrandItems/BrandItems";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("http://localhost:5000/brands"),
+      },
+      {
+        path: "/brand/:name",
+        element: <BrandItems></BrandItems>,
       },
       {
         path: "/register",
