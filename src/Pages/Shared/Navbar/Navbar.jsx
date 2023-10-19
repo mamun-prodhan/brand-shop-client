@@ -4,7 +4,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 const Navbar = () => {
-  const { logOut } = useContext(AuthContext);
+  const { logOut, user } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const navlinks = (
     <>
@@ -17,12 +17,16 @@ const Navbar = () => {
       <li>
         <NavLink to="myCart">My Cart</NavLink>
       </li>
-      <li>
-        <NavLink to="/login">Login</NavLink>
-      </li>
-      <li>
-        <NavLink to="/register">Register</NavLink>
-      </li>
+      {!user && (
+        <>
+          <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>
+          <li>
+            <NavLink to="/register">Register</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -59,12 +63,14 @@ const Navbar = () => {
           <ul className="md:flex items-center mt-4 md:mt-0 space-y-1 md:space-y-0 md:space-x-10 text-lg font-semibold md:z-auto z-[-1]">
             {navlinks}
           </ul>
-          <div
-            onClick={handleSignOut}
-            className="text-lg font-semibold cursor-pointer"
-          >
-            Logout
-          </div>
+          {user && (
+            <div
+              onClick={handleSignOut}
+              className="text-lg font-semibold cursor-pointer"
+            >
+              Logout
+            </div>
+          )}
         </div>
       </div>
     </div>
