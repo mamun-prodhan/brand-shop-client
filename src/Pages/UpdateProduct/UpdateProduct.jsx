@@ -25,6 +25,17 @@ const UpdateProduct = () => {
       rating,
     };
     console.log(brandItems);
+    fetch(`http://localhost:5000/update/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(brandItems),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
   return (
     <div>
