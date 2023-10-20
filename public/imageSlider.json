@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "1",
+    "brandName": "apple",
+    "image1": "https://i.postimg.cc/3NnqT6KW/apple.jpg",
+    "image2": "https://i.postimg.cc/3NnqT6KW/apple.jpg",
+    "image3": "https://i.postimg.cc/3NnqT6KW/apple.jpg"
+  },
+  {
+    "_id": "2",
+    "brandName": "msi",
+    "image1": "https://i.postimg.cc/fRwcGKyS/msi2.jpg",
+    "image2": "https://i.postimg.cc/fRwcGKyS/msi2.jpg",
+    "image3": "https://i.postimg.cc/fRwcGKyS/msi2.jpg"
+  },
+  {
+    "_id": "3",
+    "brandName": "asus",
+    "image1": "https://i.postimg.cc/SxTgV5dx/asus.jpg",
+    "image2": "https://i.postimg.cc/SxTgV5dx/asus.jpg",
+    "image3": "https://i.postimg.cc/SxTgV5dx/asus.jpg"
+  },
+  {
+    "_id": "4",
+    "brandName": "dell",
+    "image1": "https://i.postimg.cc/ZRhsyNj8/dell.jpg",
+    "image2": "https://i.postimg.cc/ZRhsyNj8/dell.jpg",
+    "image3": "https://i.postimg.cc/ZRhsyNj8/dell.jpg"
+  },
+  {
+    "_id": "5",
+    "brandName": "lenovo",
+    "image1": "https://i.postimg.cc/wB9syTLt/lenevo.jpg",
+    "image2": "https://i.postimg.cc/wB9syTLt/lenevo.jpg",
+    "image3": "https://i.postimg.cc/wB9syTLt/lenevo.jpg"
+  },
+  {
+    "_id": "6",
+    "brandName": "samsung",
+    "image1": "https://i.postimg.cc/4xxYsFgt/samsung.jpg",
+    "image2": "https://i.postimg.cc/4xxYsFgt/samsung.jpg",
+    "image3": "https://i.postimg.cc/4xxYsFgt/samsung.jpg"
+  }
+]
