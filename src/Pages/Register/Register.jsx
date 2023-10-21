@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { createUser, updateUser } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
+
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -34,23 +36,29 @@ const Register = () => {
           .then(() => {
             console.log("Profile Updated");
             setSuccess("Successfully Registered");
-            Swal.fire(
-              "Successfully Registered!",
-              "You have registered successfully!",
-              "success"
-            );
-            form.reset();
+            Swal.fire({
+              title: "Register Successfull",
+              text: "You have registered successfully.",
+              icon: "success",
+              button: "OK",
+            }).then(() => {
+              navigate("/");
+              setTimeout(() => {
+                window.location.reload();
+              }, 100);
+            });
           })
           .catch((error) => console.log(error));
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message);
       });
   };
   return (
-    <div>
-      <h2 className="text-5xl font-semibold text-center mt-10">
-        Please Register
+    <div className="px-4 md:px-0">
+      <h2 className="text-4xl font-bold text-center mt-10">
+        Please <span className="text-[#FF6251]">Register</span>
       </h2>
       <div className="md:w-1/2 mx-auto">
         <form onSubmit={handleRegister}>
@@ -112,7 +120,7 @@ const Register = () => {
         </form>
         <p className="font-bold py-4">
           Already have an account ? Please{" "}
-          <Link to="/login" className="text-blue-600">
+          <Link to="/login" className="text-[#FF6251]">
             Login
           </Link>
         </p>
