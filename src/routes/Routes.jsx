@@ -10,22 +10,27 @@ import MyCart from "../Pages/MyCart/MyCart";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/brands"),
+        loader: () =>
+          fetch("https://assignment-10-server-sable-eight.vercel.app/brands"),
       },
       {
         path: "/brand/:name",
         element: <BrandItems></BrandItems>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/brands/${params.name}`),
+          fetch(
+            `https://assignment-10-server-sable-eight.vercel.app/brands/${params.name}`
+          ),
       },
       {
         path: "/details/:id",
@@ -35,7 +40,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/details/${params.id}`),
+          fetch(
+            `https://assignment-10-server-sable-eight.vercel.app/details/${params.id}`
+          ),
       },
       {
         path: "/update/:id",
@@ -45,7 +52,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/update/${params.id}`),
+          fetch(
+            `https://assignment-10-server-sable-eight.vercel.app/update/${params.id}`
+          ),
       },
       {
         path: "/mycart",
@@ -54,7 +63,8 @@ const router = createBrowserRouter([
             <MyCart></MyCart>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/mycart"),
+        loader: () =>
+          fetch("https://assignment-10-server-sable-eight.vercel.app/mycart"),
       },
       {
         path: "/addProduct",

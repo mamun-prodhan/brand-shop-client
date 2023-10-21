@@ -2,13 +2,36 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
+
+  const handleGoogleSignIn = () => {
+    // setError("");
+    setSuccess("");
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        setSuccess("successfully logged In");
+        navigate(location?.state ? location.state : "/");
+        Swal.fire({
+          title: "Successfull",
+          text: "You have successfully logged In",
+          icon: "success",
+          button: "OK",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -74,6 +97,15 @@ const Login = () => {
             <button className="btn btn-primary">Login</button>
           </div>
         </form>
+        <div className="mt-3">
+          <button
+            onClick={handleGoogleSignIn}
+            className="btn btn-primary w-full"
+          >
+            <FaGoogle></FaGoogle>
+            <span>Login with Google </span>
+          </button>
+        </div>
         <p className="font-bold py-4">
           Dont have an account ? Please
           <Link to="/register" className="text-[#FF6251] ms-2">

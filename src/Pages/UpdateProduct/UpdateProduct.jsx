@@ -25,7 +25,7 @@ const UpdateProduct = () => {
       rating,
     };
     console.log(brandItems);
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://assignment-10-server-sable-eight.vercel.app/update/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

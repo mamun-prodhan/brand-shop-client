@@ -12,7 +12,9 @@ const BrandItems = () => {
   const [imageSlider, setImageSlider] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/imageslider/${name}`)
+    fetch(
+      `https://assignment-10-server-sable-eight.vercel.app/imageslider/${name}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setImageSlider(data);

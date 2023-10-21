@@ -7,29 +7,6 @@ import "./Navbar.css";
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
-  const navlinks = (
-    <>
-      <li className="">
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink to="/addProduct">Add Product</NavLink>
-      </li>
-      <li>
-        <NavLink to="myCart">My Cart</NavLink>
-      </li>
-      {!user && (
-        <>
-          <li>
-            <NavLink to="/login">Login</NavLink>
-          </li>
-          <li>
-            <NavLink to="/register">Register</NavLink>
-          </li>
-        </>
-      )}
-    </>
-  );
 
   const handleSignOut = () => {
     logOut()

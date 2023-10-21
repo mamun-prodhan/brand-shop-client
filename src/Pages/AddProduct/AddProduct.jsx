@@ -21,7 +21,7 @@ const AddProduct = () => {
       rating,
     };
     console.log(brandItems);
-    fetch("http://localhost:5000/brandItems", {
+    fetch("https://assignment-10-server-sable-eight.vercel.app/brandItems", {
       method: "POST",
       headers: {
         "content-type": "application/json",

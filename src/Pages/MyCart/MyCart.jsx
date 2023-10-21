@@ -16,7 +16,7 @@ const MyCart = () => {
   console.log("after filter", filteredCart);
 
   const handleDelete = (_id) => {
-    fetch(`http://localhost:5000/mycart/${_id}`, {
+    fetch(`https://assignment-10-server-sable-eight.vercel.app/mycart/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -16,7 +16,7 @@ const Details = () => {
     rating: details.rating,
   };
   const handleAddToCart = () => {
-    fetch("http://localhost:5000/mycart", {
+    fetch("https://assignment-10-server-sable-eight.vercel.app/mycart", {
       method: "POST",
       headers: {
         "content-type": "application/json",
