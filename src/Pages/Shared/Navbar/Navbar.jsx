@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useContext, useState } from "react";
@@ -44,8 +44,12 @@ const Navbar = () => {
     <div className="shadow-md w-full  top-0 left-0 bg-[#F2F2F2]">
       <div className="ms-4 md:ms-0 lg:flex justify-between items-center py-4 lg:px-20">
         <div className="relative flex items-center">
-          <img className="w-16 md:w-24" src={logo} alt="" />
-          <p className="text-xl font-bold text-[#F15E2D]">e-Shop</p>
+          <Link to="/">
+            <img className="w-16 md:w-24" src={logo} alt="" />
+          </Link>
+          <Link to="/">
+            <p className="text-xl font-bold text-[#F15E2D]">e-Shop</p>
+          </Link>
         </div>
         <div
           onClick={() => setOpen(!open)}

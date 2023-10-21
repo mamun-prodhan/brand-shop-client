@@ -1,13 +1,16 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const handleRegister = (e) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
@@ -18,7 +21,14 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         console.log(result.user);
-        setSuccess("Logged in successfull");
+        setSuccess("Successfully logged in");
+        navigate(location?.state ? location.state : "/");
+        Swal.fire({
+          title: "Successfull",
+          text: "You have successfully logged In",
+          icon: "success",
+          button: "OK",
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -26,10 +36,12 @@ const Login = () => {
       });
   };
   return (
-    <div>
-      <h2 className="text-5xl font-semibold text-center mt-10">Please Login</h2>
+    <div className="px-4 md:px-0">
+      <h2 className="text-4xl font-bold text-center mt-10">
+        Please <span className="text-[#FF6251]">Login</span>
+      </h2>
       <div className="md:w-1/2 mx-auto">
-        <form onSubmit={handleRegister}>
+        <form onSubmit={handleLogin}>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
@@ -64,7 +76,7 @@ const Login = () => {
         </form>
         <p className="font-bold py-4">
           Dont have an account ? Please
-          <Link to="/register" className="text-blue-600 ms-2">
+          <Link to="/register" className="text-[#FF6251] ms-2">
             Register
           </Link>
         </p>
