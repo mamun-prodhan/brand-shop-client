@@ -3,17 +3,17 @@ const Footer = () => {
     <footer className=" footer mt-10 md:mt-24 p-10 bg-base-200 text-base-content">
       <nav className="md:mx-auto">
         <header className="footer-title">Services</header>
-        <a className="link link-hover">Marriage Event</a>
-        <a className="link link-hover">Birthday Party</a>
-        <a className="link link-hover">Ceremony</a>
-        <a className="link link-hover">Event Organizer</a>
+        <a className="link link-hover">Products</a>
+        <a className="link link-hover">Partners</a>
+        <a className="link link-hover">Advertisement</a>
+        <a className="link link-hover">Product Lanches</a>
       </nav>
       <nav className="md:mx-auto">
         <header className="footer-title">Company</header>
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>
         <a className="link link-hover">Events</a>
-        <a className="link link-hover">Upcoming Events</a>
+        <a className="link link-hover">Upcoming Products</a>
       </nav>
       <nav className="md:mx-auto">
         <header className="footer-title">Legal</header>
