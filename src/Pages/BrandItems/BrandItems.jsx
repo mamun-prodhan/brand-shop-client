@@ -34,11 +34,17 @@ const BrandItems = () => {
       <h2 className="text-center font-bold mt-10 text-2xl md:text-3xl lg:text-4xl">
         Popular Brand <span className="capitalize text-[#FF6251]">{name}</span>
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 md:mt-16">
-        {brandItems.map((brandItem) => (
-          <BrandItem key={brandItem._id} brandItem={brandItem}></BrandItem>
-        ))}
-      </div>
+      {brandItems.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 md:mt-16">
+          {brandItems.map((brandItem) => (
+            <BrandItem key={brandItem._id} brandItem={brandItem}></BrandItem>
+          ))}
+        </div>
+      ) : (
+        <h2 className="text-3xl font-bold text-center my-40 text-red-600">
+          No Product Availabe
+        </h2>
+      )}
     </div>
   );
 };

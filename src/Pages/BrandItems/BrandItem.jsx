@@ -11,10 +11,10 @@ const BrandItem = ({ brandItem }) => {
         <h2 className="card-title">{name}</h2>
         <div className="flex items-center justify-end font-semibold">
           <p className="">
-            Brand : <span className="uppercase">{brandName}</span>
+            Brand : <span className="capitalize">{brandName}</span>
           </p>
           <p className=" text-end">
-            Type : <span>{type}</span>
+            Type : <span className="capitalize">{type}</span>
           </p>
         </div>
         <div className="flex items-center justify-end font-semibold">
