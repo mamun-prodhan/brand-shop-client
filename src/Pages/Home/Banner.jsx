@@ -9,24 +9,22 @@ const Banner = () => {
         alt="Banner"
       />
       <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="absolute top-1/2 left-1/2 md:left-[30%] transform -translate-x-1/2 -translate-y-1/2">
-        <p className="text-white text-sm md:text-xl  text-center md:text-start tracking-[4px]">
+      <div className="absolute top-1/2 left-[33%] md:left-[36%] lg:left-[30%] transform -translate-x-1/2 -translate-y-1/2">
+        <p className="text-white text-xs md:text-base lg:text-xl text-start tracking-[4px]">
           Quality is our Priority
         </p>
-        <h2 className="my-2 md:my-4 text-white text-2xl md:text-5xl lg:text-6xl font-bold text-center md:text-start">
-          Explore <span>Quality</span>
+        <h2 className="my-0 md:my-2 lg:my-4 text-white text-base md:text-4xl lg:text-6xl font-bold text-start">
+          Explore <span className="text-[#FF6251]">Quality</span>
         </h2>
-        <h2 className="my-2 md:my-4 text-white text-2xl md:text-5xl lg:text-6xl font-bold text-center md:text-start">
-          And <span>Performance</span>
+        <h2 className="my-0 md:my-2 lg:my-4 text-white text-base md:text-4xl lg:text-6xl font-bold text-start">
+          And <span className="text-[#FF6251]">Performance</span>
         </h2>
-        <p className="text-white text-sm md:text-base  text-center md:text-start hidden md:block">
+        <p className="text-white text-[8px] md:text-base hidden text-start md:block">
           Cutting-edge technology, high-performance devices, sleek <br />{" "}
           design, long-lasting battery life, advanced features, reliable
-          electronics,
-          <br /> seamless user experience, innovative engineering,advanced,
-          powerful processors.
+          electronics.
         </p>
-        <button className="px-3 py-2 bg-[#ef4444] text-white  rounded-lg mt-6">
+        <button className="px-4 md:px-6 py-2 md:py-4  bg-[#FF6251] rounded-sm md:rounded-xl font-bold mt-2 md:mt-6 text-[9px] md:text-base text-white">
           Explore Now
         </button>
 
