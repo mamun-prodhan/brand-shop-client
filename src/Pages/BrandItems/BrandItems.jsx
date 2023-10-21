@@ -21,10 +21,7 @@ const BrandItems = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto">
-      <h2>
-        Brand Items {name}: {brandItems.length}
-      </h2>
+    <div className="max-w-7xl mx-auto px-4 md:px-0">
       <div>
         <h2 className="text-4xl font-bold text-center">Image slider</h2>
         {loader && (
@@ -34,7 +31,10 @@ const BrandItems = () => {
         )}
         {/* {!loader && <></>} */}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-20">
+      <h2 className="text-center font-bold mt-10 text-2xl md:text-3xl lg:text-4xl">
+        Popular Brand <span className="capitalize text-[#FF6251]">{name}</span>
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 md:mt-16">
         {brandItems.map((brandItem) => (
           <BrandItem key={brandItem._id} brandItem={brandItem}></BrandItem>
         ))}
