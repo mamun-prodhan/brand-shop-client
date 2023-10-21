@@ -2,6 +2,7 @@ import Banner from "./Banner";
 import Brands from "./Brands";
 import { useLoaderData } from "react-router-dom";
 import Customer from "./Customer";
+import WhyChooseUs from "./WhyChooseUs";
 
 const Home = () => {
   const brands = useLoaderData();
@@ -27,6 +28,7 @@ const Home = () => {
         </div>
       </div>
       <Customer></Customer>
+      <WhyChooseUs></WhyChooseUs>
     </div>
   );
 };

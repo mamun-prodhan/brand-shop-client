@@ -70,7 +70,7 @@ const Customer = () => {
       {/*  */}
       <h2 className="text-2xl md:text-4xl lg:text-5xl text-center font-bold text-[#29273E]">
         More then <br />
-        <span className="text-[#F15E2D]">100000+</span> people engaged
+        <span className="text-[#F15E2D]">100000+</span> happy customers
       </h2>
       <p className="text-sm md:text-lg text-center text-[#818186] mt-3 lg:mt-5">
         Do you know what could beat the exciting felling of having a new
