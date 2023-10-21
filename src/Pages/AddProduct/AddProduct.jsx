@@ -21,13 +21,16 @@ const AddProduct = () => {
       rating,
     };
     console.log(brandItems);
-    fetch("https://assignment-10-server-sable-eight.vercel.app/brandItems", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(brandItems),
-    })
+    fetch(
+      "https://assignment-10-server-klujmloxo-mamun-prodhans-projects.vercel.app/brandItems",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(brandItems),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

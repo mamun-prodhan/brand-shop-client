@@ -16,13 +16,16 @@ const Details = () => {
     rating: details.rating,
   };
   const handleAddToCart = () => {
-    fetch("https://assignment-10-server-sable-eight.vercel.app/mycart", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(myCart),
-    })
+    fetch(
+      "https://assignment-10-server-klujmloxo-mamun-prodhans-projects.vercel.app/mycart",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(myCart),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -22,14 +22,16 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () =>
-          fetch("https://assignment-10-server-sable-eight.vercel.app/brands"),
+          fetch(
+            "https://assignment-10-server-klujmloxo-mamun-prodhans-projects.vercel.app/brands"
+          ),
       },
       {
         path: "/brand/:name",
         element: <BrandItems></BrandItems>,
         loader: ({ params }) =>
           fetch(
-            `https://assignment-10-server-sable-eight.vercel.app/brands/${params.name}`
+            `https://assignment-10-server-klujmloxo-mamun-prodhans-projects.vercel.app/brands/${params.name}`
           ),
       },
       {
@@ -41,7 +43,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://assignment-10-server-sable-eight.vercel.app/details/${params.id}`
+            `https://assignment-10-server-klujmloxo-mamun-prodhans-projects.vercel.app/details/${params.id}`
           ),
       },
       {
@@ -53,7 +55,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://assignment-10-server-sable-eight.vercel.app/update/${params.id}`
+            `https://assignment-10-server-klujmloxo-mamun-prodhans-projects.vercel.app/update/${params.id}`
           ),
       },
       {
@@ -64,7 +66,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () =>
-          fetch("https://assignment-10-server-sable-eight.vercel.app/mycart"),
+          fetch(
+            "https://assignment-10-server-klujmloxo-mamun-prodhans-projects.vercel.app/mycart"
+          ),
       },
       {
         path: "/addProduct",

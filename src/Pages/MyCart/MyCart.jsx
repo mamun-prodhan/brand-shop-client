@@ -16,9 +16,12 @@ const MyCart = () => {
   console.log("after filter", filteredCart);
 
   const handleDelete = (_id) => {
-    fetch(`https://assignment-10-server-sable-eight.vercel.app/mycart/${_id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://assignment-10-server-klujmloxo-mamun-prodhans-projects.vercel.app/mycart/${_id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

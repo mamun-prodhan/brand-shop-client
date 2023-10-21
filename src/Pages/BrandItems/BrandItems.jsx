@@ -1,19 +1,24 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import BrandItem from "./BrandItem";
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import { useEffect, useState } from "react";
+// image slider
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import "./style.css";
 
 const BrandItems = () => {
+  const [sliderRef] = useKeenSlider({
+    loop: true,
+  });
   const { name } = useParams();
   const [loader, setLoader] = useState(true);
   const brandItems = useLoaderData();
   const [imageSlider, setImageSlider] = useState([]);
+  console.log(imageSlider);
 
   useEffect(() => {
     fetch(
-      `https://assignment-10-server-sable-eight.vercel.app/imageslider/${name}`
+      `https://assignment-10-server-klujmloxo-mamun-prodhans-projects.vercel.app/imageslider/${name}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -24,8 +29,20 @@ const BrandItems = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-0">
-      <div>
-        <h2 className="text-4xl font-bold text-center">Image slider</h2>
+      <div className="mt-10">
+        {/* image slider */}
+        <div ref={sliderRef} className="keen-slider">
+          <div className="keen-slider__slide number-slide1">
+            <img className="max-w-7xl" src={imageSlider.image1} alt="" />
+          </div>
+          <div className="keen-slider__slide number-slide2">
+            <img className="max-w-7xl" src={imageSlider.image2} alt="" />
+          </div>
+          <div className="keen-slider__slide number-slide3">
+            <img className="max-w-7xl" src={imageSlider.image3} alt="" />
+          </div>
+        </div>
+        {/* image slider */}
         {loader && (
           <p className="text-2xl font-bold text-red-500 text-center my-5">
             Loading data
