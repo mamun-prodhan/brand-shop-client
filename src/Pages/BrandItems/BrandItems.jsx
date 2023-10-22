@@ -28,7 +28,7 @@ const BrandItems = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-0">
+    <div className="max-w-7xl mx-auto px-4 md:px-0 ">
       <div className="mt-10">
         {/* image slider */}
         {imageSlider && (
